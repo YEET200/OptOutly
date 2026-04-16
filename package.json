@@ -1,0 +1,21 @@
+{
+  "name": "stop-calls-suppression-assistant",
+  "version": "1.0.0",
+  "description": "Electron app to automate data broker suppression workflows",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "privacy",
+    "opt-out",
+    "suppression"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^41.2.1",
+    "playwright": "^1.54.2"
+  }
+}

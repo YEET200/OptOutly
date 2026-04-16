@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StopCalls - Suppression Assistant</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section id="loadingScreen" class="screen active loading-screen">
+      <div class="loading-card">
+        <div class="logo-dot"></div>
+        <h1>StopCalls</h1>
+        <p>Preparing suppression workspace...</p>
+        <div class="spinner"></div>
+      </div>
+    </section>
+
+    <section id="onboardingScreen" class="screen">
+      <div class="onboarding-shell">
+        <aside class="onboarding-aside">
+          <div class="brand-pill">StopCalls</div>
+          <h2>Welcome to StopCalls</h2>
+          <p>Set your profile once, then run suppression requests faster.</p>
+          <div class="progress-steps">
+            <div class="step active"><span>1</span>Enter identity details</div>
+            <div class="step"><span>2</span>Select brokers</div>
+            <div class="step"><span>3</span>Run and verify confirmations</div>
+          </div>
+        </aside>
+        <div class="onboarding-card">
+          <div class="card-title-row">
+            <h3>Onboarding</h3>
+            <span class="soft-badge">Local only</span>
+          </div>
+          <p class="muted">This info is stored locally on your machine.</p>
+          <div class="grid">
+            <label>First name <input id="firstName" type="text" /></label>
+            <label>Last name <input id="lastName" type="text" /></label>
+            <label>Email <input id="email" type="email" /></label>
+            <label>Phone <input id="phone" type="tel" /></label>
+            <label>City <input id="city" type="text" /></label>
+            <label>State <input id="state" type="text" /></label>
+            <label>ZIP <input id="zip" type="text" /></label>
+            <label>Profile URL (optional) <input id="profileUrl" type="url" /></label>
+          </div>
+          <div class="inline-actions">
+            <button id="onboardingContinueBtn" class="primary" type="button">
+              Continue to dashboard
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboardScreen" class="screen">
+      <div class="dashboard-layout">
+        <aside class="sidebar card">
+          <div class="brand-pill">StopCalls</div>
+          <nav class="sidebar-nav">
+            <button id="navDashboard" class="nav-item active" type="button">Dashboard</button>
+            <button id="navProviders" class="nav-item" type="button">Providers</button>
+            <button id="navActivity" class="nav-item" type="button">Activity</button>
+          </nav>
+          <div class="sidebar-foot">
+            <button id="editProfileBtn" type="button">Edit profile</button>
+            <button id="resetOnboardingBtn" type="button">Reset onboarding</button>
+          </div>
+        </aside>
+
+        <div class="workspace">
+          <header class="topbar">
+            <div>
+              <h1>Suppression Dashboard</h1>
+              <p>Automate what can be automated, then finish manual checks quickly.</p>
+            </div>
+            <div class="inline-actions">
+              <div class="soft-stat" id="selectedCount">0 selected</div>
+            </div>
+          </header>
+
+          <main class="dashboard-main">
+            <section id="dashboardView" class="view active">
+              <section class="stats-grid">
+                <article class="stat-card">
+                  <div class="stat-icon">🌐</div>
+                  <div class="stat-value" id="statTotalProviders">0</div>
+                  <div class="stat-label">Total websites</div>
+                </article>
+                <article class="stat-card">
+                  <div class="stat-icon">✅</div>
+                  <div class="stat-value" id="statSelectedProviders">0</div>
+                  <div class="stat-label">Selected</div>
+                </article>
+                <article class="stat-card">
+                  <div class="stat-icon">🤖</div>
+                  <div class="stat-value" id="statAutoFriendly">0</div>
+                  <div class="stat-label">Automation-friendly</div>
+                </article>
+                <article class="stat-card">
+                  <div class="stat-icon">✋</div>
+                  <div class="stat-value" id="statManualRequired">0</div>
+                  <div class="stat-label">Manual-heavy</div>
+                </article>
+              </section>
+
+              <section class="card actions">
+                <button id="startBtn" class="primary" type="button">Start suppression run</button>
+                <button id="stopBtn" type="button">Stop</button>
+                <button id="exportBtn" type="button">Export results</button>
+              </section>
+            </section>
+
+            <section id="providersView" class="view">
+              <section class="card">
+                <div class="providers-header">
+                  <div>
+                    <h2>Data brokers</h2>
+                    <p class="muted" id="providerCount">0 providers available</p>
+                  </div>
+                  <div class="buttons">
+                    <input id="providerSearch" type="text" placeholder="Search providers..." />
+                    <button id="selectAllBtn" type="button">Select all</button>
+                    <button id="selectNoneBtn" type="button">Select none</button>
+                  </div>
+                </div>
+                <div id="providersList" class="providers-list"></div>
+                <div id="providersEmptyState" class="empty-state hidden">
+                  <div class="empty-icon">🔎</div>
+                  <h3>No matching websites found</h3>
+                  <p>Try a different search term or clear filters.</p>
+                </div>
+              </section>
+            </section>
+
+            <section id="activityView" class="view">
+              <section class="card">
+                <h2>Run log</h2>
+                <pre id="log"></pre>
+                <div id="logEmptyState" class="empty-state">
+                  <div class="empty-icon">📋</div>
+                  <h3>No run history yet</h3>
+                  <p>Start a suppression run to populate logs and dashboard insights.</p>
+                </div>
+              </section>
+            </section>
+          </main>
+        </div>
+      </div>
+
+      <aside id="providerDrawer" class="provider-drawer">
+        <div class="drawer-header">
+          <h2 id="drawerProviderName">Provider details</h2>
+          <button id="closeDrawerBtn" type="button">Close</button>
+        </div>
+        <div class="drawer-content">
+          <p class="muted" id="drawerProviderDomain"></p>
+          <div class="drawer-links">
+            <a id="drawerWebsiteLink" href="#" target="_blank" rel="noreferrer">Open website</a>
+            <a id="drawerOptOutLink" href="#" target="_blank" rel="noreferrer">Open opt-out page</a>
+          </div>
+          <h3>Notes</h3>
+          <ul id="drawerNotes"></ul>
+        </div>
+      </aside>
+    </section>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
