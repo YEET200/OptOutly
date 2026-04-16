@@ -1,4 +1,4 @@
-# 📵  OptOutly/
+# 📵  OptOutly
 **Automate your removal from data broker lists & stop unwanted calls**
 
 OptOutly/ is a privacy-focused Electron app that helps users automatically opt out of data broker databases, reducing spam calls, robocalls, and unwanted marketing outreach.
