@@ -64,37 +64,37 @@ App tracks completion status
 
 ---
 ## 🧠 Supported Data Brokers (Example)
-Spokeo
-Whitepages
-BeenVerified
-PeopleFinder
-TruthFinder
+- Spokeo
+- Whitepages
+- BeenVerified
+- PeopleFinder
+- TruthFinder
 
 (More integrations coming soon)
 ---
 
 ## 🔐 Security & Privacy
-Data never leaves your device (unless required for opt-out requests)
-No analytics or tracking
-Optional encryption for stored user data
+- Data never leaves your device (unless required for opt-out requests)
+- No analytics or tracking
+- Optional encryption for stored user data
 
 ---
 ## ⚠️ Disclaimer
 
-StopCalls automates public opt-out processes.
+- OptOutly automates public opt-out processes.
 
 Some data brokers may:
 
-Require manual identity verification
-Re-list data over time
+- Require manual identity verification
+- Re-list data over time
 
 This app does not guarantee full removal, but significantly reduces exposure.
 
 ---
 ##📌 Roadmap
- AI-powered broker detection
- One-click email verification
- Cloud sync (optional, encrypted)
- Mobile companion app
- API for integrations
+-  AI-powered broker detection
+-  One-click email verification
+-  Cloud sync (optional, encrypted)
+-  Mobile companion app
+-  API for integrations
 
