@@ -1,28 +1,28 @@
-📵 StopCalls
+#📵 StopCalls
 
 Automate your removal from data broker lists & stop unwanted calls
 
 StopCalls is a privacy-focused Electron app that helps users automatically opt out of data broker databases, reducing spam calls, robocalls, and unwanted marketing outreach.
 
-🚀 Features
-🔍 Data Broker Scanner
+#🚀 Features
+-🔍 Data Broker Scanner
 Detects which major data brokers may have your information.
-🤖 Automated Opt-Out Requests
+-🤖 Automated Opt-Out Requests
 Submits removal requests to supported data brokers automatically.
-📬 Email Verification Handling
+-📬 Email Verification Handling
 Guides users through confirmation emails required for opt-outs.
-⏱ Automation Scheduling
+-⏱ Automation Scheduling
 Re-run opt-outs weekly/monthly to stay off lists.
-🔐 Privacy-First Design
+-🔐 Privacy-First Design
 No tracking
 No data selling
 All data stored locally (or optionally encrypted)
-📊 Dashboard
+-📊 Dashboard
 View:
 Requests sent
 Pending verifications
 Successfully removed brokers
-🖥️ Tech Stack
+#🖥️ Tech Stack
 Frontend: Electron + HTML/CSS (Tailwind optional)
 Backend Logic: Node.js
 Automation: Puppeteer / Playwright
