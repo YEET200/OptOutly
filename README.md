@@ -1,4 +1,4 @@
-# StopCalls Suppression Assistant
+# OptOutly Suppression Assistant
 
 Desktop Electron app to automate data-broker suppression request workflows and guide manual completion steps.
 
